@@ -3,11 +3,13 @@
 #include <string>
 #include <fstream>
 
+/*
 std::string removeLeadingSpaces(std::string line);
 
 int main(){
     std::cout << removeLeadingSpaces("   Hello, world   ") << "end" << std::endl;
 }
+*/
 
 std::string removeLeadingSpaces(std::string line){
     std::string noSpace;
@@ -28,6 +30,7 @@ std::string unindentFile(std::string filename){
     std::string unindented;
     while(std::getline(file, line)){
         unindented += removeLeadingSpaces(line);
+        unindented += "\n";
     }
     file.close();
     return unindented;
